@@ -5,7 +5,10 @@ import vue from "@vitejs/plugin-vue";
 import { ghPages } from "vite-plugin-gh-pages";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(),ghPages()],
+  plugins: [
+    vue(),
+    ghPages()
+  ],
   base: process.env.NODE_ENV === 'production' ? '/vue-week6/' : './',
   resolve: {
     alias: {
