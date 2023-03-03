@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as t}from"./index-cdbfea9c.js";const n={name:"Orders",data(){return{}}};function o(s,a,c,_,d,p){return r(),t("div",null," 這裡是 訂單列表 ")}const l=e(n,[["render",o]]);export{l as default};
