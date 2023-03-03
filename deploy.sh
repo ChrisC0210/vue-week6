@@ -1,18 +1,23 @@
 #!/usr/bin/env sh
+# 檢查有沒有 dist 資料夾，如果有的話，就移除
+DIR="./dist"
+if [ -d "$DIR" ]; then
+  yes | rm -r ./dist
+fi
 
-# abort on errors
+# 发生错误时终止
 set -e
 
-# build
+# 构建 產出靜態網站，即 dist 資料夾
 npm run build
 
-# navigate into the build output directory
+# 进入构建文件夹 進到 dist 資料夾
 cd dist
 
-# place .nojekyll to bypass Jekyll processing
+# 放置 .nojekyll 以绕过 Jekyll 的处理。
 echo > .nojekyll
 
-# if you are deploying to a custom domain
+# 如果你要部署到自定义域名
 # echo 'www.example.com' > CNAME
 
 git init
@@ -20,10 +25,10 @@ git checkout -B main
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://ChrisC0210.github.io
-# git push -f git@github.com:ChrisC0210/ChrisC0210.github.io.git main
+# 如果你要部署在 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
-# if you are deploying to https://ChrisC0210.github.io/vue-week6
+# 如果你要部署在 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:chrisc0210/vue-week6.git main:gh-pages
 
 cd -

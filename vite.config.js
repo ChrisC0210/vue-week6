@@ -6,7 +6,7 @@ import { ghPages } from "vite-plugin-gh-pages";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(),ghPages()],
-  base: process.env.NODE_ENV === 'production' ? '/vite-deploy-sample/' : './',
+  base: process.env.NODE_ENV === 'production' ? '/vue-week6/' : './',
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
